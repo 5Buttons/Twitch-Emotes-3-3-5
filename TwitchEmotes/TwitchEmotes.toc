@@ -1,0 +1,25 @@
+## Interface: 30300
+## Title: |TInterface\Addons\TwitchEmotes\Pepes\EZ:0|t|cff6441a5Twitch|r |cffffffffEmotes|r|TInterface\Addons\TwitchEmotes\Pepes\EZ:0|t
+## IconTexture: Interface\AddOns\TwitchEmotes\1337.tga
+## Notes: Adds popular Twitch & Discord emotes to your chat. Developed by Ren - 3.3.5a backport by Fivebuttons 
+## Author: Ren
+## Version: v2
+## SavedVariables: Emoticons_Settings Emoticons_Eyecandy
+## OptionalDeps: LibStub
+
+# Libraries
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\libdatabroker-1-1\LibDataBroker-1.1.lua
+
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml     
+
+Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+
+
+UIDropDownMenuTemplates.xml
+UIDropDownMenu.lua
+TwitchEmotes.lua
+TwitchEmotes.xml
