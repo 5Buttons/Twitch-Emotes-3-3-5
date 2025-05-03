@@ -7571,38 +7571,50 @@ function Emoticons_OnEvent(self, event, ...)
             print("TwitchEmotes Error: LibDBIcon-1.0 not found!")
             return
         end
+        
         for k, v in pairs(origsettings) do
             if k ~= "MinimapPos" and Emoticons_Settings[k] == nil then
                 Emoticons_Settings[k] = v;
             end
         end
+        
         Emoticons_UpdateChatFilters();
-        LDBIcon:Register("TwitchEmotesIcon", {
+        
+        -- Create the LDB object first
+        local TwitchEmotesLDB = LDB:NewDataObject("TwitchEmotesIcon", {
             type = "launcher", 
-            icon = "Interface\\AddOns\\TwitchEmotes\\1337.tga", -- button texture
-            tooltip = "Twitch Emotes", 
+            icon = "Interface\\AddOns\\TwitchEmotes\\1337.tga",
+            tooltip = "Twitch Emotes",
             OnClick = function(frame, button) 
                 if button == "LeftButton" then
                     Lib_ToggleDropDownMenu(1, nil, EmoticonChatFrameDropDown, frame, 0, 0);
                 elseif button == "RightButton" then
-                    -- Open options panel on rightclick
                     InterfaceOptionsFrame_OpenToCategory(EmoticonsOptionsControlsPanel)
                 end
             end,
             OnEnter = function(frame)
-                 GameTooltip:SetOwner(frame, "ANCHOR_BOTTOMLEFT")
-                 GameTooltip:AddLine("Twitch Emotes")
-                 GameTooltip:AddLine("|cffeda55fClick:|r Show Emotes")
-                 GameTooltip:AddLine("|cffeda55fRight-Click:|r Options") 
-                 GameTooltip:Show()
-             end,
-             OnLeave = function(frame)
-                 GameTooltip:Hide()
-             end
+                GameTooltip:SetOwner(frame, "ANCHOR_BOTTOMLEFT")
+                GameTooltip:AddLine("Twitch Emotes")
+                GameTooltip:AddLine("|cffeda55fClick:|r Show Emotes")
+                GameTooltip:AddLine("|cffeda55fRight-Click:|r Options") 
+                GameTooltip:Show()
+            end,
+            OnLeave = function(frame)
+                GameTooltip:Hide()
+            end
         })
+        
+        -- Then register with LibDBIcon, using Emoticons_Settings as the db
+        LDBIcon:Register("TwitchEmotesIcon", TwitchEmotesLDB, Emoticons_Settings)
+        
+        -- Update visibility based on settings
+        if not Emoticons_Settings["MINIMAPBUTTON"] then
+            LDBIcon:Hide("TwitchEmotesIcon")
+        else
+            LDBIcon:Show("TwitchEmotesIcon")
+        end
     end
 end
-  
   function ItemTextPageText.SetText(self,msg,...)
 	if(Emoticons_Settings["MAIL"] and msg ~= nil) then
 	  msg = Emoticons_RunReplacement(msg);
@@ -7874,9 +7886,12 @@ end
     Emoticons_Settings["MINIMAPBUTTON"] = state; 
 
     if LDBIcon then 
-        LDBIcon:Refresh("TwitchEmotesIcon", { hide = not state }) 
+        if state then
+            LDBIcon:Show("TwitchEmotesIcon")
+        else
+            LDBIcon:Hide("TwitchEmotesIcon")
+        end
     else
-        --Add a message if the library isn't loaded for some reason
         print("TwitchEmotes Error: LibDBIcon not available when trying to set minimap button visibility.")
     end
 end
