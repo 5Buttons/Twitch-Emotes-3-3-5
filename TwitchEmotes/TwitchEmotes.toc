@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Title: |TInterface\Addons\TwitchEmotes\Emotes\Pepes\EZ:0|t|cff6441a5Twitch|r |cffffffffEmotes|r|TInterface\Addons\TwitchEmotes\Emotes\Pepes\EZ:0|t
-## IconTexture: Interface\AddOns\TwitchEmotes\1337.tga
+## IconTexture: Interface\AddOns\TwitchEmotes\Emotes\1337.tga
 ## Notes: Adds popular Twitch & Discord emotes to your chat. Developed by Ren - 3.3.5a backport by Fivebuttons 
 ## Author: Ren
 ## Version: v2
