@@ -18,8 +18,8 @@ Emoticons_Settings={
 --	["CHAT_MSG_BN_WHISPER"]=true,	--9
 --	["CHAT_MSG_BN_WHISPER_INFORM"]=true,--dont count, tie to 9
 --	["CHAT_MSG_BN_CONVERSATION"]=true,--10
-	["CHAT_MSG_INSTANCE_CHAT"]=true,--11
-	["CHAT_MSG_INSTANCE_CHAT_LEADER"]=true,--dont count, tie to 11
+	["CHAT_MSG_BATTLEGROUND"]=true,--11
+	["CHAT_MSG_BATTLEGROUND_LEADER"]=true,--dont count, tie to 11
 	["MAIL"]=true,
 	["TWITCHBUTTON"]=true,
 	["sliderX"]=-35,
@@ -28,12 +28,10 @@ Emoticons_Settings={
 	["MINIMAPBUTTON"] = true,
 	["FAVEMOTES"] = {true,true,true,true,true,true,true,true,true,true,
 	true,true,true,true,true,true,true,true,true,true,
-	true,true,true,true,true,true,true}
+	true,true,true,true,true,true,true,true,}
   
   };
   Emoticons_Eyecandy = false;
-  
-  
   
   local origsettings = {
 	["CHAT_MSG_OFFICER"]=true,
@@ -61,7 +59,7 @@ Emoticons_Settings={
 	["MINIMAPBUTTON"] = true,
 	["FAVEMOTES"] = {true,true,true,true,true,true,true,true,true,true,
 	true,true,true,true,true,true,true,true,true,true,
-	true,true,true,true,true,true,true,}
+	true,true,true,true,true,true,true,true,}
   };
   
   local dropdown_options={
@@ -93,6 +91,7 @@ Emoticons_Settings={
 	[25]=  {"Suze4Mumes Life P2","FeelsShadowMan","PepeRuski","PepeSoldier","PepeGiggle","PepeKingLove","PepeSpartan","PepeSuspect","peepoChef","peepoChrist","peepoSuze","PepeCop","potter","PepeStudy","suze4animals","PepeGod","PepeWave","PepeHacker","PepeWheels","peepOK","peepKing","PepeSoldier","FeelsDankMan","spit1","spit2","suze4know","GAmer","PepeSmurf","PauseChamp","PogChampius","WeirdChampius","PogO"},
 	[26]=  {"Ren Custom P1","FLOPPERS","cmoN","OhISee","Poghurt","KEKW","KEKWeird","KEKSad","KEKL","BroKiss","pOg","Pogey","PogeyU","KKonaW","kkOna","DKKona","cmonEyes","TriKool","5Hard","TriPeek","TriEasy","TriGold","TriHardo","0Head","1Head","2Head","3Head","3Lass","4HEader","4Weird","4Shrug","4Mansion","5Head"},
 	[27]=  {"Ren Custom P2","PogWarts","noxSorry","AMAZINGA","BaconEffect",":fluff:",":fluff2:","PATHETIC","TriHardS","HYPERDANSGAMEW","LULWW","MaN","NaM","VaN","WhiteKnight","BlackKnight","PikaWOW","Boomer","WeirdChamp","WutChamp","StareChamp","OkayChamp","MaldChamp","DisappointChamp","SadChamp","OldChamp","SillyChamp","LULChamp","CrazyChamp","WeirdBruh"},
+	[28]=  {"Chromie", "Dedge", "CavemanBob","CcKekThas", "CcMile", "GusFring"},
 };
 
   -- Call this in a mod's initialization to move the minimap button to its saved position (also used in its movement)
@@ -533,8 +532,8 @@ end
 	if(chattype == "CHAT_MSG_WHISPER") then
 	  Emoticons_Settings["CHAT_MSG_WHISPER_INFORM"] = state;
 	end
-	if(chattype == "CHAT_MSG_INSTANCE_CHAT") then
-	  Emoticons_Settings["CHAT_MSG_INSTANCE_CHAT_LEADER"] = state;
+	if(chattype == "CHAT_MSG_BATTLEGROUND") then
+	  Emoticons_Settings["CHAT_MSG_BATTLEGROUND_LEADER"] = state;
 	end
 --	if(chattype == "CHAT_MSG_BN_WHISPER") then
 --	  Emoticons_Settings["CHAT_MSG_BN_WHISPER_INFORM"] = state;

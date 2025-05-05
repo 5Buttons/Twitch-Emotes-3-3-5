@@ -716,6 +716,12 @@ defaultpack={
 	["esfandAre"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\EsfandTV\\esfandAre.tga:28:28",
 	["esfandDead"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\EsfandTV\\esfandDead.tga:28:28",
 	["peepoNoButter"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\EsfandTV\\peepoNoButter.tga:28:28",
+	--Chromie
+	["Dedge"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Chromie\\Dedge.tga:28:28",
+	["CavemanBob"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Chromie\\CavemanBob.tga:28:28",
+	["CcKekThas"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Chromie\\CcKekThas.tga:28:28",
+	["CcMile"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Chromie\\CcMile.tga:28:28",
+	["GusFring"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Chromie\\GusFring.tga:28:28",
 	-- Custom
 	["thinkioning"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Custom\\thinkioning.tga:28:28",
 	["JohnU"]="Interface\\AddOns\\TwitchEmotes\\Emotes\\Custom\\JohnU.tga:28:28",
@@ -4236,6 +4242,12 @@ defaultpack={
 	["esfandAre"]="esfandAre",
 	["esfandDead"]="esfandDead",
 	["peepoNoButter"]="peepoNoButter",
+	--Chromie
+	["CavemanBob"] ="CavemanBob",
+	["CcKekThas"] ="CcKekThas",
+	["Dedge"] ="Dedge",
+	["CcMile"] ="CcMile",
+	["GusFring"] ="GusFring",
 	-- Custom
 	["thinkioning"]="thinkioning",
 	["taureW"]="taureW",

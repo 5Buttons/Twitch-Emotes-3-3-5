@@ -253,7 +253,7 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
   </Scripts>
 </CheckButton>
 
-<!-- Third row, right side (Mail and Instance Chat) -->
+<!-- Third row, right side (Mail and Battleground Chat) -->
 <CheckButton name="$parentMAIL" inherits="ChatConfigCheckButtonTemplate">
   <Anchors>
     <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="TOPRIGHT">
@@ -272,7 +272,7 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
   </Scripts>
 </CheckButton>
 
-<CheckButton name="$parentCHAT_MSG_INSTANCE_CHAT" inherits="ChatConfigCheckButtonTemplate">
+<CheckButton name="$parentCHAT_MSG_BATTLEGROUND" inherits="ChatConfigCheckButtonTemplate">
   <Anchors>
     <Anchor point="TOPLEFT" relativeTo="$parentMAIL" relativePoint="BOTTOMLEFT">
       <Offset>
@@ -282,10 +282,10 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
   </Anchors>
   <Scripts>
     <OnLoad>
-      getglobal(self:GetName().."Text"):SetText("Instance Chat");
+      getglobal(self:GetName().."Text"):SetText("Battleground");
     </OnLoad>
     <OnClick>
-      Emoticons_SetType("CHAT_MSG_INSTANCE_CHAT",self:GetChecked());
+      Emoticons_SetType("CHAT_MSG_BATTLEGROUND",self:GetChecked());
     </OnClick>
   </Scripts>
 </CheckButton>
