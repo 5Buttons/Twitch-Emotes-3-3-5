@@ -113,161 +113,182 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 
 		</Scripts>
 		<Frames>
-            <!-- Channel Checkboxes -->
-			<CheckButton name="$parentCHAT_MSG_SAY" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentSubText" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="-2" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Say");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_SAY",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_YELL" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Yell");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_YELL",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_GUILD" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_YELL" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Guild");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_GUILD",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_OFFICER" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_GUILD" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Officer");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_OFFICER",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_WHISPER" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="TOPRIGHT">
-						<Offset>
-							<AbsDimension x="150" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Whisper");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_WHISPER",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_PARTY" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Party");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_PARTY",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_RAID" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_PARTY" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Raid");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_RAID",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_CHANNEL" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_RAID" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Channel");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("CHAT_MSG_CHANNEL",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>.
-	
-			<CheckButton name="$parentMAIL" inherits="ChatConfigCheckButtonTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_BN_CONVERSATION" relativePoint="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x="0" y="0"/>
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Scripts>
-					<OnLoad>
-						getglobal(self:GetName().."Text"):SetText("Mail");
-					</OnLoad>
-					<OnClick>
-						Emoticons_SetType("MAIL",self:GetChecked());
-					</OnClick>
-				</Scripts>
-			</CheckButton>
+           <!-- First row, left side -->
+<CheckButton name="$parentCHAT_MSG_SAY" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentSubText" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="-2" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Say");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_SAY",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_YELL" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Yell");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_YELL",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_GUILD" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_YELL" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Guild");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_GUILD",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_OFFICER" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_GUILD" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Officer");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_OFFICER",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+
+<!-- First row, right side -->
+<CheckButton name="$parentCHAT_MSG_WHISPER" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="TOPRIGHT">
+      <Offset>
+        <AbsDimension x="150" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Whisper");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_WHISPER",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_PARTY" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Party");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_PARTY",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_RAID" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_PARTY" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Raid");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_RAID",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+<CheckButton name="$parentCHAT_MSG_CHANNEL" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_RAID" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Channel");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_CHANNEL",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+
+<!-- Third row, right side (Mail and Instance Chat) -->
+<CheckButton name="$parentMAIL" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="TOPRIGHT">
+      <Offset>
+        <AbsDimension x="150" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Mail");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("MAIL",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
+
+<CheckButton name="$parentCHAT_MSG_INSTANCE_CHAT" inherits="ChatConfigCheckButtonTemplate">
+  <Anchors>
+    <Anchor point="TOPLEFT" relativeTo="$parentMAIL" relativePoint="BOTTOMLEFT">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+  <Scripts>
+    <OnLoad>
+      getglobal(self:GetName().."Text"):SetText("Instance Chat");
+    </OnLoad>
+    <OnClick>
+      Emoticons_SetType("CHAT_MSG_INSTANCE_CHAT",self:GetChecked());
+    </OnClick>
+  </Scripts>
+</CheckButton>
             <!-- START OF MINIMAP BUTTON DIVIDER (Re-anchored) -->
 			<Frame name="$ChatFrameChannelButtonMMDivider"> <!-- Renamed for clarity -->
 				<Anchors>
